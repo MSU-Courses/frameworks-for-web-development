@@ -12,7 +12,7 @@
 
 Все материалы курса будут доступны на GitHub. Если у вас возникнут какие-либо вопросы по материалам, вы можете создать issue на GitHub: https://github.com/MSU-Courses/frameworks-for-web-development или написать мне на почту.
 
-# Ссылки
+## Ссылки
 
-- [^1]: Laravel - The PHP Framework for Web Artisans, laravel.com [online]. Available: https://laravel.com/
-- [^2]: React, react.dev [online]. Available: https://react.dev
+[^1]: Laravel - The PHP Framework for Web Artisans, laravel.com [online]. Available: https://laravel.com/
+[^2]: React, react.dev [online]. Available: https://react.dev
