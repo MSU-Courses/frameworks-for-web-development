@@ -1,0 +1,5 @@
+.vscode
+.idea
+
+# HTTP file for testing
+./test.http
