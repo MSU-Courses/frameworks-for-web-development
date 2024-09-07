@@ -1,4 +1,4 @@
-### Introducere
+# Introducere
 
 Înainte de a începe să învățați un framework, este esențial să înțelegeți ce este dezvoltarea web. Chiar dacă ați avut un curs dedicat dezvoltării web, este important să revedeți bazele acestei domenii.
 

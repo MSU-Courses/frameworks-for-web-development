@@ -1,4 +1,4 @@
-### Clientul și Serverul
+# Clientul și Serverul
 
 Unul dintre conceptele de bază în dezvoltarea web este relația client-server. Să explorăm acest concept:
 
