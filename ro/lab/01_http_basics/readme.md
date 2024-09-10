@@ -44,6 +44,7 @@ Scopul acestei lucrări de laborator este studierea principiilor de bază ale pr
    model=Corolla&make=Toyota&year=2020
    ```
    Presupuneți situațiile în care serverul poate returna codurile de stare HTTP `200`, `201`, `400`, `401`, `403`, `404`, `500`.
+5. Scrieți o cerere de tip `DELETE` la alegerea dvs. și să explicați de ce, în acest caz, este potrivit să utilizați metoda `DELETE`.
 
 ### Sarcina nr. 3. Sarcina suplimentară. HTTP_Quest
 
@@ -66,6 +67,12 @@ Scopul acestei lucrări de laborator este studierea principiilor de bază ale pr
 *Notă pentru sarcina nr. 3*:
 1. Folosiți instrumentul `curl`, `postman` sau orice alt instrument pentru a trimite cererile.
 2. Puteți relua quest-ul executând din nou primul pas.
+
+## Intrebări de autoevaluare
+
+1. Ce este protocolul HTTP?
+2. Pentru ce folosim antetul `User-Agent`?
+3. Care este diferența dintre metodele `PUT` și `PATCH`?
 
 ## Raport
 
