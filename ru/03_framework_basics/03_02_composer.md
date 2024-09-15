@@ -113,5 +113,5 @@ composer
 > [!TIP]
 > Для использования Composer в командной строке, вам необходимо находиться в корневой директории вашего проекта.
 
-[^1]: Composer, getcomposer.org [online]. Available at: https://getcomposer.org/ (Accessed: 15.09.2024).
-[^2]: What is Composer? webjump.ai [online]. Available at: https://webjump.ai/en/composer-what-it-is-how-to-use-it-and-how-to-install-it (Accessed: 15.09.2024).
+[^1]: Composer, getcomposer.org [online]. Available at: https://getcomposer.org/
+[^2]: What is Composer? webjump.ai [online]. Available at: https://webjump.ai/en/composer-what-it-is-how-to-use-it-and-how-to-install-it

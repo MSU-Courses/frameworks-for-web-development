@@ -92,6 +92,6 @@ php artisan command_name
 > [!TIP]
 > Для просмотра всех доступных команд Artisan, выполните команду `php artisan list`.
 
-[^1]: Meet Laravel, laravel.com [online]. Available at: https://laravel.com/docs/11.x (Accessed: 15.09.2024).
+[^1]: Meet Laravel, laravel.com [online]. Available at: https://laravel.com/docs/11.x
 [^2]: Creating a laravel project, laravel.com [online]. Available at: https://laravel.com/docs/10.x/installation#creating-a-laravel-project
 [^3]: Artisan Console, laravel.com [online]. Available at: https://laravel.com/docs/10.x/artisan

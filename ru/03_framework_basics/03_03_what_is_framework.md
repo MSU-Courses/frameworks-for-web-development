@@ -30,4 +30,4 @@
 | Spring Boot (Java)        | Svelte                      |
 | ASP.NET (C#)              | JQuery                      |
 
-[^1]: What is a Framework? [online]. Available at: https://www.codecademy.com/resources/blog/what-is-a-framework/ (Accessed: 15.09.2024).
+[^1]: What is a Framework? [online]. Available at: https://www.codecademy.com/resources/blog/what-is-a-framework/
