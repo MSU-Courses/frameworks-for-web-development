@@ -99,4 +99,4 @@ project/
 - `composer.json` — файл настроек Composer.
 - `composer.lock` — файл с зависимостями Composer.
 
-[^1]: Laravel project structure. [https://laravel.com/docs/10.x/structure](https://laravel.com/docs/10.x/structure)
+[^1]: Laravel project structure, laravel.com [online] Available at: https://laravel.com/docs/10.x/structure

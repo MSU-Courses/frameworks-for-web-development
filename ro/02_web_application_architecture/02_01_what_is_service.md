@@ -27,4 +27,4 @@ Mai simplu spus, un serviciu este un program care rulează pe un server și înd
 | Poate fi atât pe calculatorul dumneavoastră, cât și pe server | Rulează pe un server și oferă altor programe posibilitatea de a comunica cu el prin internet |
 | De exemplu, un serviciu Windows care actualizează programele | De exemplu, un serviciu pentru trimiterea de e-mailuri |
 
-[^1]: Web Services, medium.com [online]. Available: https://medium.com/@shreyas.zanzad12/creating-a-web-service-8c359454376d
+[^1]: Web Services, medium.com [online]. URL: https://medium.com/@shreyas.zanzad12/creating-a-web-service-8c359454376d

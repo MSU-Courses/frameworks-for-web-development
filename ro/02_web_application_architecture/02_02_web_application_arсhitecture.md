@@ -106,9 +106,9 @@ Un exemplu simplu de interacțiune ar putea fi schimbul de informații prin inte
 
 Acest lucru poate fi considerat o formă de API, deoarece serviciile `A` și `B` comunică între ele prin intermediul fișierului. Cu toate acestea, aceasta nu este o metodă eficientă de interacțiune și poate cauza multe probleme.
 
-[^1]: Web Application Architecture, medium.com [online]. Available: https://medium.com/geekculture/web-application-architecture-800d3ecd8019
-[^2]: Monolithic Architecture: What, Why and When, medium.com [online]. Available: https://medium.com/swlh/monolithic-architecture-what-why-and-when-986dc5d5ce03
-[^3]: Что такое монолитная архитетура, iaassaaspaas [online]. Available: https://iaassaaspaas.ru/terminologiya/chto-takoe-monolitnaya-arhitetura
-[^4]: Monolith vs Microservices, evergreen.team [online]. Available: https://evergreen.team/
-[^5]: What Is Service-Oriented Architecture? medium.com [online]. Available: https://medium.com/@SoftwareDevelopmentCommunity/what-is-service-oriented-architecture-fa894d11a7ec
-[^6]: Microservices Architecture From A to Z? medium.com [online]. Available: https://medium.com/swlh/microservices-architecture-from-a-to-z-7287da1c5d28
+[^1]: Web Application Architecture, medium.com [online]. URL: https://medium.com/geekculture/web-application-architecture-800d3ecd8019
+[^2]: Monolithic Architecture: What, Why and When, medium.com [online]. URL: https://medium.com/swlh/monolithic-architecture-what-why-and-when-986dc5d5ce03
+[^3]: Что такое монолитная архитетура, iaassaaspaas [online]. URL: https://iaassaaspaas.ru/terminologiya/chto-takoe-monolitnaya-arhitetura
+[^4]: Monolith vs Microservices, evergreen.team [online]. URL: https://evergreen.team/
+[^5]: What Is Service-Oriented Architecture? medium.com [online]. URL: https://medium.com/@SoftwareDevelopmentCommunity/what-is-service-oriented-architecture-fa894d11a7ec
+[^6]: Microservices Architecture From A to Z? medium.com [online]. URL: https://medium.com/swlh/microservices-architecture-from-a-to-z-7287da1c5d28

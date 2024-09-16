@@ -23,4 +23,4 @@
 
 În acest curs, vom învăța să creăm **aplicații web**. Este important să înțelegeți cum funcționează internetul și tehnologiile web. După revizuirea acestor concepte, vom explora framework-ul Laravel.
 
-[^1]: Desktop Applications, freematiq.com [online]. Available: https://freematiq.com/uslugi/desktop-prilozheniya/.
+[^1]: Desktop Applications, freematiq.com [online]. URL: https://freematiq.com/uslugi/desktop-prilozheniya/.

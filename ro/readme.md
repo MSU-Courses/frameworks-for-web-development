@@ -28,5 +28,5 @@ Un alt aspect important al cursului este familiarizarea cu diverse alte aspecte 
 
 Toate materialele cursului vor fi disponibile pe GitHub. Dacă aveți întrebări legate de materiale, puteți crea o problemă (issue) pe GitHub: https://github.com/MSU-Courses/frameworks-for-web-development sau îmi puteți scrie pe e-mail.
 
-[^1]: Laravel - The PHP Framework for Web Artisans, laravel.com [online]. Available: https://laravel.com/
-[^2]: React, react.dev [online]. Available: https://react.dev
+[^1]: Laravel - The PHP Framework for Web Artisans, laravel.com [online]. URL: https://laravel.com/
+[^2]: React, react.dev [online]. URL: https://react.dev
