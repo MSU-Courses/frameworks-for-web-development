@@ -54,4 +54,7 @@ Laravel проходит по списку таких помощников, со
 
 Вот и всё — запрос прошел весь путь через Laravel, и пользователь получил ответ!
 
-[^1]: Request Lifecycle, laravel.com [online]. Available at: https://laravel.com/docs/10.x/lifecycle
+![Laravel HTTP Lifecycle](https://imgur.com/LkJvRcb.png) [^2]
+
+[^1]: Request Lifecycle, laravel.com [online]. Available at: https://laravel.com/docs/10.x/lifecycle\
+[^2]: Laravel Request Lifecycle, medium [online]. Available at: https://medium.com/@ankitatejani84/laravel-request-lifecycle-7c2145aa1257
