@@ -3,7 +3,7 @@
 Când folosiți orice instrument, este esențial să înțelegeți cum funcționează. Acest lucru vă va ajuta să vă simțiți mai încrezători și să rezolvați problemele care pot apărea. La baza funcționării Laravel se află **ciclul de viață al procesării unui request** (request lifecycle).  
 În acest articol, vom explora cum se procesează un request în Laravel.
 
-## Ciclul de viață al procesării unui request
+## Ciclul de viață al procesării unui request [^1]
 
 ### Procesarea inițială a request-ului
 
