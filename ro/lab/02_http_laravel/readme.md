@@ -1,4 +1,4 @@
-### Lucrare de laborator nr. 2. Cereri HTTP și template-uri în Laravel
+# Lucrare de laborator nr. 2. Cereri HTTP și template-uri în Laravel
 
 ## Scopul lucrării
 
