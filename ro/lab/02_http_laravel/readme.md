@@ -117,6 +117,7 @@ Aplicația este destinată unei echipe care dorește să își gestioneze sarcin
    - `index.blade.php` — lista de sarcini;
    - `show.blade.php` — afișarea unei sarcini;
    - ...
+5. Randați lista de sarcini pe pagina `index.blade.php` folosind date statice transmise din controller cu ajutorul directivei `@foreach`.
 
 **Notă**: Deoarece încă nu lucrăm cu baza de date și modele, utilizați date statice, transmise din controller în șablon, pentru a afișa informații despre sarcini. Logica de prelucrare a datelor nu este necesară în acest moment.
 
@@ -151,6 +152,7 @@ public function show($id)
       6. Starea sarcinii (finalizată/nu este finalizată);
       7. Prioritatea sarcinii (scăzută/medie/ridicată);
       8. Responsabilul sarcinii (Assignment), adică numele utilizatorului căruia i-a fost atribuită sarcina.
+3. Afișați componenta de sarcină creată pe pagina `show.blade.php` folosind parametrii transmiși.
 
 #### Nr. 4.4. Stilizarea paginilor
 
