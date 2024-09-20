@@ -1,12 +1,12 @@
-# Lucrare de laborator nr. 2. Cereri HTTP și template-uri în Laravel
+# Laboratorul nr. 2. Cereri HTTP și șabloane în Laravel
 
 ## Scopul lucrării
 
-Studierea principiilor de bază ale lucrului cu cererile HTTP în Laravel și utilizarea template-urilor Blade pe baza aplicației web `To-Do App pentru echipe`, o aplicație pentru gestionarea sarcinilor echipei.
+Să studiem principiile de bază ale lucrului cu cererile HTTP în Laravel și șablonizarea folosind Blade, bazate pe aplicația web `To-Do App pentru echipe` — o aplicație pentru gestionarea sarcinilor într-o echipă.
 
-Aplicația trebuie să fie destinată unei echipe care dorește să gestioneze sarcinile, să le aloce membrilor echipei, să urmărească statusul și prioritățile acestora (similar cu Github Issues).
+Aplicația este destinată unei echipe care dorește să gestioneze sarcinile, să le aloce membrilor, să urmărească starea și prioritățile sarcinilor (similar cu Github Issues).
 
-## Cerințe
+## Condiții
 
 ### Nr. 1. Pregătirea pentru lucru, instalarea Laravel
 
@@ -14,95 +14,113 @@ Aplicația trebuie să fie destinată unei echipe care dorește să gestioneze s
    ```bash
    composer create-project --prefer-dist laravel/laravel todo-app
    ```
-2. Accesați directorul proiectului:
+2. Intrați în directorul proiectului:
    ```bash
    cd todo-app
    ```
-3. Porniți serverul încorporat Laravel:
+3. Porniți serverul intern Laravel:
    ```bash
    php artisan serve
    ```
-   Ce vedeți în browser când deschideți pagina `http://localhost:8000`?
+   **Întrebare**: Ce vedeți în browser când deschideți pagina `http://localhost:8000`?
 
 ### Nr. 2. Configurarea mediului
 
-1. Deschideți fișierul `.env` și setați următoarele configurații pentru aplicație:
+1. Deschideți fișierul `.env` și specificați următoarele setări pentru aplicație:
    ```ini
-   APP_NAME=
-   APP_ENV=
+   APP_NAME=ToDoApp
+   APP_ENV=local
    APP_KEY=
    APP_DEBUG=true
    APP_URL=http://localhost:8000
    ```
-2. Generați cheia aplicației, care va fi folosită pentru criptarea datelor:
+2. Generați cheia aplicației, care va fi utilizată pentru criptarea datelor:
    ```bash
    php artisan key:generate
    ```
-   > **Ce se va întâmpla dacă această cheie ajunge pe mâna unor persoane rău intenționate?**
+   **Întrebare**: Ce se va întâmpla dacă această cheie ajunge pe mâinile unui răufăcător?
 
-### Nr. 3. Bazele lucrului cu cererile HTTP
+### Nr. 3. Baza lucrului cu cereri HTTP
 
-1. Creați o clasă controller `HomeController` pentru a gestiona cererile pentru pagina principală și adăugați metoda `index`.
-2. Creați ruta `/` pentru pagina principală în fișierul `routes/web.php`.
-3. Creați ruta `/about` pentru pagina „Despre noi” în fișierul `routes/web.php`.
-4. Creați o clasă controller `TaskController` pentru a gestiona cererile legate de sarcini, cu următoarele metode:
+#### Nr. 3.1. Crearea rutelor pentru pagina principală și pagina „Despre noi”
+
+1. Creați clasa controler `HomeController` pentru a gestiona cererile pentru pagina principală.
+2. Adăugați metoda `index` în `HomeController`, care va fi responsabilă de afișarea paginii principale.
+3. Creați ruta pentru pagina principală în fișierul `routes/web.php`.
+   ```php
+   public function index()
+   {
+      return view('home'); // Afișează pagina principală
+   }
+   ```
+   - Deschideți browserul și navigați la adresa `http://localhost:8000`. Asigurați-vă că se încarcă o pagină goală, deoarece vizualizarea home.blade.php nu a fost creată încă.
+4. În același controler `HomeController`, creați o metodă pentru pagina **„Despre noi”**.
+5. Adăugați ruta pentru pagina „Despre noi” în fișierul `routes/web.php`.
+
+#### Nr. 3.2. Crearea rutelor pentru sarcini
+
+1. Creați clasa controler `TaskController` pentru gestionarea cererilor legate de sarcini și adăugați următoarele metode:
    - `index` — afișarea listei de sarcini;
    - `create` — afișarea formularului de creare a unei sarcini;
    - `store` — salvarea unei noi sarcini;
    - `show` — afișarea unei sarcini;
    - `edit` — afișarea formularului de editare a unei sarcini;
-   - `update` — actualizarea unei sarcini;
-   - `destroy` — ștergerea unei sarcini.
-    
-     _Deocamdată lăsați aceste metode goale, în curând veți renderiza view-uri și veți lucra cu date._  
+   - `update` — actualizarea sarcinii;
+   - `destroy` — ștergerea sarcinii.
 
-     Exemplu de metodă `index`:
+   _În acest stadiu, aceste metode pot fi lăsate goale. În curând veți începe să lucrați cu vizualizări, iar în lucrările de laborator ulterioare — cu date._
+
+   Exemplu de metodă `index`:
    ```php
    public function index()
    {
-       return 'This is Index';
+       return 'This is a list of tasks';
    }
    ```
-5. Creați rutele pentru metodele controller-ului `TaskController` în fișierul `routes/web.php` și indicați metodele corecte ale controller-ului.
-6. Folosiți gruparea rutelor pentru controller-ul `TaskController` cu prefixul `/tasks` pentru a simplifica rutarea și pentru a îmbunătăți lizibilitatea codului.
-7. Definiți numele corecte ale rutelor pentru controller-ul `TaskController`, de exemplu:
-   1. `tasks.index` — lista sarcinilor;
-   2. `tasks.create` — formularul de creare a sarcinii;
-   3. ...
-8. În loc să creați manual rute pentru fiecare metodă, în Laravel puteți folosi un controller de resurse, care va crea automat rutele pentru toate **operațiunile CRUD**.
-   1. În fișierul `routes/web.php`, înlocuiți crearea manuală a rutelor pentru controller-ul `TaskController` cu un controller de resurse:
+
+2. Creați rutele pentru metodele din controlerul `TaskController` în fișierul `routes/web.php` și specificați metodele HTTP corecte pentru fiecare rută.
+3. Utilizați gruparea rutelor pentru controlerul `TaskController` cu prefixul `/tasks` pentru a simplifica rutarea și a îmbunătăți lizibilitatea codului.
+4. Definiți numele rutelor corecte pentru metodele din `TaskController`, de exemplu:
+   - `tasks.index` — lista sarcinilor;
+   - `tasks.create` — formularul de creare a unei sarcini.
+   - ...
+
+5. În loc să creați manual rute pentru fiecare metodă, puteți utiliza un **controler resursă**, care va crea automat rutele pentru toate operațiile **CRUD**:
+   - În fișierul `routes/web.php`, înlocuiți crearea manuală a rutelor pentru `TaskController` cu un controler resursă:
       ```php
       Route::resource('tasks', TaskController::class);
       ```
+   - **Întrebare**: Explicați diferența dintre crearea manuală a rutelor și utilizarea unui controler resursă. Ce rute și nume de rute vor fi create automat?
 
-### Nr. 4. Templating cu Blade
+### Nr. 4. Șablonizare folosind Blade
 
-#### Nr. 4.1. Crearea layout-ului paginii
+#### Nr. 4.1. Crearea unui layout pentru pagini
 
-1. Creați layout-ul paginilor principale `layouts/app.blade.php` cu elementele comune ale paginii:
+1. Creați layout-ul paginilor principale `layouts/app.blade.php` cu elementele comune ale paginilor:
    1. Titlul paginii;
    2. Meniul de navigare;
    3. Conținutul paginii.
+2. Utilizați directiva `@yield` pentru a defini aria în care va fi inserat conținutul diferitelor pagini.
 
-#### Nr. 4.2. Utilizarea template-urilor Blade
+#### Nr. 4.2. Utilizarea șabloanelor Blade
 
-1. Creați view-ul pentru pagina principală `home.blade.php` folosind layout-ul `layouts/app.blade.php` în directorul `resources/views`. Pe pagina principală trebuie să existe:
-   1. Un mesaj de bun venit: titlul și o scurtă descriere a aplicației, de exemplu "To-Do App pentru echipe".
+1. Creați vizualizarea pentru pagina principală `home.blade.php` utilizând layout-ul `layouts/app.blade.php` în directorul `resources/views`.
+2. Pe pagina principală trebuie să existe:
+   1. **Mesaj de bun venit**: un titlu și o scurtă descriere a aplicației, de exemplu "To-Do App pentru echipe".
    2. **Navigare**: linkuri către secțiunile principale, cum ar fi:
-      1. Lista sarcinilor;
-      2. Crearea unei sarcini.
-   3. Informații despre aplicație: o scurtă descriere a scopului aplicației și a principalelor sale funcții.
-2. Creați view-ul pentru pagina „Despre noi” `about.blade.php` folosind layout-ul `layouts/app.blade.php` în directorul `resources/views`.
-3. Creați view-uri pentru sarcini cu următoarele template-uri în directorul `resources/views/tasks`:
-   1. `index.blade.php` — lista sarcinilor;
-   2. `create.blade.php` — formularul de creare a unei sarcini;
-   3. `show.blade.php` — afișarea unei sarcini;
-   4. `edit.blade.php` — formularul de editare a unei sarcini.
+      - Lista sarcinilor;
+      - Crearea unei sarcini.
+   3. **Informații despre aplicație**: o scurtă descriere a scopului aplicației și a principalelor funcționalități.
+3. Creați vizualizarea pentru pagina „Despre noi” — `about.blade.php` utilizând layout-ul `layouts/app.blade.php` în directorul `resources/views`.
+4. Creați vizualizările pentru sarcini cu următoarele șabloane în directorul `resources/views/tasks`:
+   - `index.blade.php` — lista sarcinilor;
+   - `create.blade.php` — formularul de creare a unei sarcini;
+   - `show.blade.php` — afișarea unei sarcini;
+   - `edit.blade.php` — formularul de editare a unei sarcini.
 
-Deoarece încă nu lucrăm cu baza de date și modele, folosiți date statice transmise din controller către componentă pentru a afișa informații despre sarcini. **Nu este necesară implementarea logicii**.
+**Notă**: Deoarece deocamdată nu lucrăm cu baza de date și modele, folosiți date statice, transmise din controler în șablon, pentru a afișa informații despre sarcini. Logica de prelucrare a datelor nu este necesară încă.
 
-De exemplu,
-
+Exemplu de metodă pentru afișarea unei sarcini:
 ```php
 public function show($id)
 {
@@ -112,41 +130,41 @@ public function show($id)
         // ...
     ];
 
-    return view('tasks.show', [
-         'task' => $task
-    ]);
+    return view('tasks.show', ['task' => $task]);
 }
 ```
 
 #### Nr. 4.3. Componente anonime Blade
 
-> [!TIP]  
-> În `Laravel` există posibilitatea de a crea `componente anonime` pentru a simplifica structura template-urilor și reutilizarea blocurilor de cod.
+> [!TIP]
+> În Laravel, se pot crea componente anonime pentru a simplifica structura șabloanelor și reutilizarea blocurilor de cod.
 
-1. Creați o componentă anonimă pentru afișarea `header`. Utilizați componenta creată în layout-ul `layouts/app.blade.php`.
-2. Creați o componentă anonimă pentru afișarea unei sarcini.
-   1. Componenta trebuie să fie simplă și să folosească parametrii transmiși prin directiva `@props`. Acest lucru va face template-urile mai flexibile și reutilizabile pe diferite pagini.
-   2. Componenta trebuie să afișeze informații despre sarcină, cum ar fi:
+1. Creați o componentă anonimă pentru afișarea unui `header`. Folosiți componenta creată în layout-ul `layouts/app.blade.php`.
+2. Creați o componentă anonimă pentru afișarea unei sarcini:
+   1. Componenta trebuie să fie simplă și să folosească parametrii transmiși cu ajutorul directivei `@props`. Acest lucru va face șabloanele mai flexibile și reutilizabile pe diferite pagini.
+   2. Componenta trebuie să afișeze informațiile despre sarcină:
       1. Titlul sarcinii;
       2. Descrierea sarcinii;
       3. Data creării sarcinii;
       4. Data actualizării sarcinii;
       5. Acțiuni pentru sarcină (editare, ștergere);
-      6. Statusul sarcinii (completată/necompletată);
-      7. Prioritatea sarcinii (mică/medie/mare);
-      8. Executorul sarcinii (numele utilizatorului atribuit sarcinii).
+      6. Starea sarcinii (finalizată/nefinalizată);
+      7. Prioritatea sarcinii (scăzută/medie/ridicată);
+      
+
+ 8. Responsabilul sarcinii (Assignment), adică numele utilizatorului căruia i-a fost alocată sarcina.
 
 ### Nr. 5. Sarcini suplimentare
 
-> [!IMPORTANT]  
-> Această sarcină este suplimentară și nu este obligatorie, dar poate fi utilizată pentru o înțelegere mai aprofundată a subiectului.
+> [!IMPORTANT]
+> Acest task nu este obligatoriu, dar vă va ajuta să aprofundați materialul.
 
-1. Afișați ultima sarcină pe pagina principală folosind `View Composer`.
-2. Adăugați o componentă anonimă suplimentară pentru afișarea priorității sarcinii (`mică`, `medie`, `mare`) cu culori sau pictograme diferite pentru fiecare prioritate.
+1. Afișați ultima sarcină creată pe pagina principală folosind **View Composer**.
+2. Creați o componentă anonimă suplimentară pentru afișarea priorității unei sarcini (scăzută, medie, ridicată) cu culori sau pictograme diferite pentru fiecare prioritate.
 
 ## Întrebări de control
 
-1. Ce este un controller de resurse în Laravel și ce rute creează?
-2. Explicați diferența dintre crearea manuală a rutelor și utilizarea unui controller de resurse. Ce nume de rute vor fi create automat?
+1. Ce este un controler resursă în Laravel și ce rute creează?
+2. Explicați diferența dintre crearea manuală a rutelor și utilizarea unui controler resursă.
 3. Ce avantaje oferă utilizarea componentelor anonime Blade?
-4. Ce metode HTTP sunt utilizate pentru efectuarea operațiunilor **CRUD**?
+4. Ce metode de cereri HTTP sunt utilizate pentru a efectua operațiile **CRUD**?
