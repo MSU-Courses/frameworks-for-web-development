@@ -40,7 +40,7 @@ Aplicația este destinată unei echipe care dorește să gestioneze sarcinile, s
    ```
    **Întrebare**: Ce se va întâmpla dacă această cheie ajunge pe mâinile unui răufăcător?
 
-### Nr. 3. Baza lucrului cu cereri HTTP
+### Nr. 3. Principiile de bază ale lucrului cu cererile HTTP
 
 #### Nr. 3.1. Crearea rutelor pentru pagina principală și pagina „Despre noi”
 
@@ -92,7 +92,7 @@ Aplicația este destinată unei echipe care dorește să gestioneze sarcinile, s
       ```
    - **Întrebare**: Explicați diferența dintre crearea manuală a rutelor și utilizarea unui controler resursă. Ce rute și nume de rute vor fi create automat?
 
-### Nr. 4. Șablonizare folosind Blade
+### Nr. 4. Șablonizare folosind `Blade`
 
 #### Nr. 4.1. Crearea unui layout pentru pagini
 
