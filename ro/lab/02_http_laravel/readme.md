@@ -84,6 +84,7 @@ Aplicația este destinată unei echipe care dorește să gestioneze sarcinile, s
    - `tasks.index` — lista sarcinilor;
    - `tasks.create` — formularul de creare a unei sarcini.
    - ...
+6. Adăugați validarea parametrului de rută `id` pentru sarcini. Asigurați-vă că parametrul `id` este un număr întreg pozitiv. Utilizați metoda `where` pentru a restricționa valorile parametrului `id`.
 5. În loc să creați manual rute pentru fiecare metodă, puteți utiliza un **controler resursă**, care va crea automat rutele pentru toate operațiile **CRUD**:
    - În fișierul `routes/web.php`, înlocuiți crearea manuală a rutelor pentru `TaskController` cu un controler resursă:
       ```php
