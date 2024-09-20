@@ -84,13 +84,13 @@ Aplicația este destinată unei echipe care dorește să gestioneze sarcinile, s
    - `tasks.index` — lista sarcinilor;
    - `tasks.create` — formularul de creare a unei sarcini.
    - ...
-
 5. În loc să creați manual rute pentru fiecare metodă, puteți utiliza un **controler resursă**, care va crea automat rutele pentru toate operațiile **CRUD**:
    - În fișierul `routes/web.php`, înlocuiți crearea manuală a rutelor pentru `TaskController` cu un controler resursă:
       ```php
       Route::resource('tasks', TaskController::class);
       ```
    - **Întrebare**: Explicați diferența dintre crearea manuală a rutelor și utilizarea unui controler resursă. Ce rute și nume de rute vor fi create automat?
+6. Verificați rutele create folosind comanda `php artisan route:list`.
 
 ### Nr. 4. Șablonizare folosind `Blade`
 
