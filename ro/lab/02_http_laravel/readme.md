@@ -40,7 +40,7 @@ Aplicația este destinată unei echipe care dorește să își gestioneze sarcin
    ```
    **Întrebare**: Ce s-ar întâmpla dacă această cheie ar ajunge pe mâna unui răufăcător?
 
-### Nr. 3. Bazele lucrului cu cererile HTTP
+### Nr. 3. Principiile de bază ale lucrului cu cererile HTTP
 
 #### Nr. 3.1. Crearea rutelor pentru pagina principală și pagina "Despre noi"
 
