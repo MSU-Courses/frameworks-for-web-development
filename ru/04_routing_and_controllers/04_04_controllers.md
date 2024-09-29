@@ -8,8 +8,6 @@
 **Пример**:
 
 ```php
-use Illuminate\Http\Response;
-
 // Список постов
 Route::get('/post', function () {
     // ...
@@ -92,8 +90,6 @@ Route::put('/post/{id}', function ($id) {
 Представим, что у нас определены маршруты в файле `routes/web.php`:
 
 ```php
-use Illuminate\Http\Response;
-
 Route::get('/post', function () {
     return 'List of Posts';
 });

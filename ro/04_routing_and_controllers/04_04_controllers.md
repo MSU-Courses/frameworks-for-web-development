@@ -7,8 +7,6 @@ Imaginați-vă că aveți mai multe rute, iar toată logica lor este în acelaș
 **Exemplu**:
 
 ```php
-use Illuminate\Http\Response;
-
 // Lista postărilor
 Route::get('/post', function () {
     // ...
@@ -76,8 +74,6 @@ O bună practică este să separați logica în **controlere diferite**, cum ar 
 Să presupunem că avem definite următoarele rute în fișierul `routes/web.php`:
 
 ```php
-use Illuminate\Http\Response;
-
 Route::get('/post', function () {
     return 'Lista postărilor';
 });
@@ -362,11 +358,11 @@ Route::singleton('profile', ProfileController::class);
 
 Aceasta va crea următoarele rute:
 
-| Metodă HTTP | URI           | Metoda controllerului | Numele rutei   | Descriere                      |
-|-------------|---------------|-----------------------|----------------|--------------------------------|
-| GET         | /profile      | show                  | profile.show   | Afișarea profilului            |
-| GET         | /profile/edit | edit                  | profile.edit   | Formular pentru editarea profilului|
-| PUT/PATCH   | /profile      | update                | profile.update | Actualizarea profilului        |
+| Metodă HTTP | URI           | Metoda controllerului | Numele rutei   | Descriere                           |
+|-------------|---------------|-----------------------|----------------|-------------------------------------|
+| GET         | /profile      | show                  | profile.show   | Afișarea profilului                 |
+| GET         | /profile/edit | edit                  | profile.edit   | Formular pentru editarea profilului |
+| PUT/PATCH   | /profile      | update                | profile.update | Actualizarea profilului             |
 
 Controlerele singleton simplifică gestionarea resurselor care există într-un singur exemplar, eliminând necesitatea de a transmite identificatorul resursei în rute. Acest lucru face codul mai clar și mai concis.
 

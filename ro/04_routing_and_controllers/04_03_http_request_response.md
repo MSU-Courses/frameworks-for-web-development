@@ -181,8 +181,6 @@ Pentru a seta anteturi în răspuns, se folosește metoda `header()`. **De exemp
 Exemplu:
 
 ```php
-use Illuminate\Http\Response;
-
 Route::get('/response', function () {
     return response('Salut, Lume!', 200)
         ->header('Content-Type', 'text/plain');
@@ -207,8 +205,6 @@ Un alt tip de răspuns în Laravel este redirecționarea. Pentru aceasta, se fol
 Exemplu:
 
 ```php
-use Illuminate\Http\Response;
-
 Route::get('/redirect', function () {
     return redirect('/home');
 });
@@ -217,8 +213,6 @@ Route::get('/redirect', function () {
 Dacă se folosește numele unei rute (`route name`), acesta este considerat un mod preferat:
 
 ```php
-use Illuminate\Http\Response;
-
 // Definim o rută cu numele "home"
 Route::get('/home', function () {
     return 'Pagina de acasă';
@@ -249,8 +243,6 @@ Uneori, este necesar să redirecționezi utilizatorul înapoi la **pagina anteri
 Exemplu:
 
 ```php
-use Illuminate\Http\Response;
-
 Route::get('/', function () {
     return back();
 });

@@ -182,8 +182,6 @@ Route::get('/response', function () {
 Пример:
 
 ```php
-use Illuminate\Http\Response;
-
 Route::get('/response', function () {
     return response('Hello, World!', 200)
         ->header('Content-Type', 'text/plain');
@@ -206,8 +204,6 @@ Route::get('/response', function () {
 Пример:
 
 ```php
-use Illuminate\Http\Response;
-
 Route::get('/redirect', function () {
     return redirect('/home');
 });
@@ -216,8 +212,6 @@ Route::get('/redirect', function () {
 Если используется имя маршрута (`route name`), это считается более предпочтительным способом:
 
 ```php
-use Illuminate\Http\Response;
-
 // Определяем маршрут с именем "home"
 Route::get('/home', function () {
     return 'Home Page';
@@ -248,8 +242,6 @@ Route::get('/', function () {
 Пример:
 
 ```php
-use Illuminate\Http\Response;
-
 Route::get('/', function () {
     return back();
 });
