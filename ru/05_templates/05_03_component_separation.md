@@ -256,7 +256,7 @@ php artisan make:component Post
 
 Пример:
 
-```blade
+```php
 // app/View/Components/Post.php
 
 class Post extends Component
@@ -415,7 +415,7 @@ php artisan make:component post --view
 <x-post title="Title" />
 ```
 
-### Условные классы компонентов
+### Соединение атрибутов
 
 В компонентах часто требуется добавлять атрибуты, независимо от того, были ли они переданы при вызове компонента.
 
