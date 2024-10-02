@@ -102,7 +102,7 @@
 
 Директива `@yield` указывает места, в которые будет вставлено содержимое дочерних шаблонов. Эти области могут быть переопределены в дочерних шаблонах.
 
-```php
+```blade
 <!-- resources/views/home.blade.php -->
 <!-- Дочерний шаблон, наследующий layout -->
 @extends('layouts.app')
@@ -123,7 +123,7 @@
 
 Благодаря наследованию шаблона `app.blade.php`, содержимое дочернего шаблона `home.blade.php` будет автоматически вставлено в указанные области базового шаблона:
 
-```php
+```blade
 <!DOCTYPE html>
 <html>
   <head>
@@ -158,13 +158,13 @@
 
 Общий синтаксис директивы `@include`:
 
-```php
+```blade
 @include('component-name', ['data1' => $data1, 'data2' => $data2, ...])
 ```
 
 Рассмотрим пример использования директивы `@include` для вставки компонента "Пост" в шаблон "Список постов":
 
-```php
+```blade
 <!-- resources/views/posts.blade.php -->
 <!DOCTYPE html>
 <html>
@@ -179,7 +179,7 @@
 </html>
 ```
 
-```php
+```blade
 <!-- resources/views/components/post.blade.php -->
 <div class="post">
     <h2>{{ $post.title }}</h2>
@@ -192,7 +192,7 @@
 
 С помощью директивы `@includeWhen` можно включить компонент в шаблон только при выполнении определенного условия:
 
-```php
+```blade
 @includeWhen($condition, 'component-name', ['data1' => $data1, 'data2' => $data2, ...])
 ```
 
@@ -232,11 +232,11 @@ php artisan make:component Post
 
 После создания компонента, его можно использовать в шаблонах, применяя директиву `x-component`, где имя компонента записывается в формате _kebab-case_:
 
-```php
+```blade
 <x-post />
 ```
 
-```php
+```blade
 <!-- resources/views/components/post.blade.php -->
 <div class="post">
    <!-- Content -->
@@ -245,7 +245,7 @@ php artisan make:component Post
 
 Если ваш компонент находится во вложенных поддиректориях, укажите путь к нему через точку:
 
-```php
+```blade
 // resources/views/components/blog/post.blade.php
 <x-blog.post />
 ```
@@ -256,7 +256,7 @@ php artisan make:component Post
 
 Пример:
 
-```php
+```blade
 // app/View/Components/Post.php
 
 class Post extends Component
@@ -283,13 +283,13 @@ class Post extends Component
 
 Для передачи данных в компонент используйте атрибуты, где формат _camelCase_ из конструктора преобразуется в _kebab-case_ в шаблоне:
 
-```php
+```blade
 <x-post title="Post title" description="Post description" author-name="Nick" />
 ```
 
 Если значения хранятся в переменных, можно использовать синтаксис Blade:
 
-```php
+```blade
 <x-post
    :title="$post->title"
    :description="$post->description"
@@ -299,7 +299,7 @@ class Post extends Component
 
 Сам компонент будет выглядеть следующим образом:
 
-```php
+```blade
 <!-- resources/views/components/post.blade.php -->
 <div class="post">
     <h2>{{ $title }}</h2>
@@ -312,7 +312,7 @@ class Post extends Component
 
 Часто бывает необходимо задать компоненту стандартные атрибуты, такие как класс или id. Для этого можно использовать переменную `$attributes` в шаблоне компонента:
 
-```php
+```blade
 <!-- resources/views/components/post.blade.php -->
 <div {{ $attributes }}>
       <!-- Content -->
@@ -321,7 +321,7 @@ class Post extends Component
 
 Теперь можно передавать атрибуты в компонент следующим образом:
 
-```php
+```blade
 // В шаблоне вместо $attributes будут подставлены class="post" и id="post-1"
 
 <x-post class="post" id="post-1" />
@@ -347,7 +347,7 @@ php artisan make:component post --view
 
 Анонимные компоненты создаются в шаблоне с помощью директивы `x-component`:
 
-```php
+```blade
 <!-- resources/views/components/post.blade.php -->
 <div>
    <h2>{{ $title }}</h2>
@@ -356,7 +356,7 @@ php artisan make:component post --view
 </div>
 ```
 
-```php
+```blade
 <!-- resources/views/posts.blade.php -->
 <x-post title="Post title" description="Post description" author-name="Nick" />
 ```
@@ -374,7 +374,7 @@ php artisan make:component post --view
 
 Пример использования пропсов с указанием значений по умолчанию:
 
-```php
+```blade
 @props([
    'title' => 'Default title',
    'description' => 'Default description',
@@ -388,7 +388,7 @@ php artisan make:component post --view
 </div>
 ```
 
-```php
+```blade
 <x-post title="Title" />
 // Выведен:
 // <h2>Title</h2>
@@ -402,7 +402,7 @@ php artisan make:component post --view
 
 Также вы можете определить пропсы без указания значений по умолчанию:
 
-```php
+```blade
 @props(['title', 'description', 'authorName'])
 
 // ...
@@ -410,7 +410,7 @@ php artisan make:component post --view
 
 В таком случае эти пропсы будут обязательны для передачи при вызове компонента.
 
-```php
+```blade
 // Ошибка: не переданы обязательные пропсы
 <x-post title="Title" />
 ```
@@ -421,7 +421,7 @@ php artisan make:component post --view
 
 Для этого можно использовать метод `merge`, который объединяет переданные атрибуты с дополнительными:
 
-```php
+```blade
 <!-- resources/views/components/post.blade.php -->
 <div {{ $attributes->merge(['class' => 'bg-gray-100']) }}>
    <!-- Content -->
@@ -430,7 +430,7 @@ php artisan make:component post --view
 
 Теперь при вызове компонента можно передать дополнительные атрибуты:
 
-```php
+```blade
 <x-post class="text-center" />
 
 // Результат:
@@ -449,7 +449,7 @@ php artisan make:component post --view
 
 Пример:
 
-```php
+```blade
 <!-- resources/views/components/alert.blade.php -->
 <div class="alert">
    <h2>{{ $title }}</h2>
@@ -463,7 +463,7 @@ php artisan make:component post --view
 
 При вызове компонента можно передать как данные (например, заголовок), так и содержимое, которое попадет в слот:
 
-```php
+```blade
 <x-alert title="Предупреждение">
    // Это содержимое будет вставлено вместо переменной $slot,
    // то есть все, что находится внутри тега x-component (x-alert)
@@ -495,7 +495,7 @@ php artisan make:component post --view
 
 Рассмотрим пример компонента с именованными слотами:
 
-```php
+```blade
 <!-- resources/views/components/form.blade.php -->
 <form>
    {{ $slot }} <!-- Основное содержимое -->
@@ -517,7 +517,7 @@ php artisan make:component post --view
 
 Пример:
 
-```php
+```blade
 <x-form>
    <x-slot:buttons>
       <button>Отправить</button>
@@ -538,7 +538,7 @@ php artisan make:component post --view
 
 ### `layouts/app.blade.php` — базовый шаблон:
 
-```php
+```blade
 <!DOCTYPE html>
 <html>
 <head>
@@ -562,7 +562,7 @@ php artisan make:component post --view
 
 ### `auth.blade.php` — шаблон страницы аутентификации:
 
-```php
+```blade
 @extends('layouts.app')
 
 @section('title', 'Авторизация')
@@ -574,7 +574,7 @@ php artisan make:component post --view
 
 ### `components/forms/text-input.blade.php` — компонент текстового поля:
 
-```php
+```blade
 @props([
    'name',
    'type' => 'text',
@@ -591,7 +591,7 @@ php artisan make:component post --view
 
 ### `components/forms/form.blade.php` — компонент формы:
 
-```php
+```blade
 <form {{ $attributes }}>
    {{ $slot }}
 </form>
@@ -608,7 +608,7 @@ php artisan make:component post --view
 
 ### `auth/login-form.blade.php` — компонент формы авторизации:
 
-```php
+```blade
 <x-forms.form {{-- остальные атрибуты формы --}} >
    <x-forms.text-input name="login" placeholder="Логин" />
 
