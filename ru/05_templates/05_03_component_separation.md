@@ -78,7 +78,7 @@
 
 Рассмотрим создание базового шаблона `app.blade.php` и дочернего шаблона `home.blade.php`.
 
-```php
+```blade
 <!-- resources/views/layouts/app.blade.php -->
 <!-- Базовый layout приложения с общими элементами -->
 <!DOCTYPE html>
