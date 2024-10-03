@@ -1,4 +1,4 @@
-### Introducere în șablonare și motoare de șabloane
+# Introducere în șablonare și motoare de șabloane
 
 Din ce în ce mai puține aplicații rămân statice în prezent, iar tot mai multe devin dinamice.
 

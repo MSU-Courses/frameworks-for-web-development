@@ -1,4 +1,4 @@
-## Afișarea datelor din sesiune în șabloanele Blade
+# Afișarea datelor din sesiune în șabloanele Blade
 
 În șabloanele Blade, poți afișa date din sesiune care au fost setate în controller. Pentru aceasta, se folosește funcția `session()`.
 
