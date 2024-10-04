@@ -542,7 +542,7 @@ Utilizează directiva `@include` dacă:
 1. Ai nevoie să incluzi un fragment simplu de HTML (de exemplu, footer, header sau meniu) care nu conține logică complexă;
 2. O parte a șablonului nu necesită cod reutilizabil și poate rămâne statică sau minim dinamică.
 
-În celelalte cazuri, se recomandă utilizarea componentelor Blade, deoarece acestea oferă numeroase avantaje:
+În celelalte cazuri, se recomandă utilizarea componentelor Blade, deoarece acestea oferă numeroase avantaje.
 
 ## Exemplu de împărțire a șablonului în componente
 
