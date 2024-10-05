@@ -4,13 +4,13 @@
 
 Familiarizarea cu principiile de bază ale lucrului cu baze de date în Laravel. Învățarea creării de migrații, modele și seed-uri pe baza aplicației web `To-Do App`.
 
-## Condiția
+## Condiții
 
 În cadrul acestei lucrări de laborator, veți continua dezvoltarea aplicației `To-Do App` pentru echipe, începută în lucrările de laborator anterioare.
 
 Veți adăuga funcționalitatea de lucru cu baza de date, veți crea modele și migrații, veți configura relațiile dintre modele și veți învăța să utilizați fabrici și seed-uri pentru generarea datelor de testare.
 
-### Pregătirea pentru lucru
+### №1. Pregătirea pentru lucru
 
 > [!TIP]
 > Tematici: S3
@@ -27,7 +27,7 @@ Veți adăuga funcționalitatea de lucru cu baza de date, veți crea modele și 
    DB_PASSWORD=parola_dvs
    ```
 
-### Crearea modelelor și migrațiilor
+### №2. Crearea modelelor și migrațiilor
 
 > [!TIP]
 > Tematici: S6, S7
@@ -62,7 +62,7 @@ Veți adăuga funcționalitatea de lucru cu baza de date, veți crea modele și 
      - `updated_at` — data actualizării etichetei.
 8. Adăugați câmpul `$fillable` în modelele `Task`, `Category` și `Tag` pentru a permite atribuirea în masă a datelor.
 
-### Relația dintre tabele
+### №3. Relația dintre tabele
 
 > [!TIP]
 > Tematici: S8
@@ -77,7 +77,7 @@ Veți adăuga funcționalitatea de lucru cu baza de date, veți crea modele și 
    - **Exemplu**: `task_id` și `tag_id`: sarcina `10` este legată de eticheta `5`.
 4. Rulați migrarea pentru a crea tabela în baza de date.
 
-### Relațiile dintre modele
+### №4. Relațiile dintre modele
 
 > [!TIP]
 > Tematici: S8
@@ -96,7 +96,7 @@ Veți adăuga funcționalitatea de lucru cu baza de date, veți crea modele și 
 3. Adăugați relații în modelul `Tag` (O etichetă poate fi legată de multe sarcini).
 4. Adăugați câmpurile corespunzătoare în `$fillable` ale modelelor.
 
-### Crearea fabricilor și seed-urilor
+### №5. Crearea fabricilor și seed-urilor
 
 > [!TIP]
 > Tematici: S7, S8
@@ -112,7 +112,7 @@ Veți adăuga funcționalitatea de lucru cu baza de date, veți crea modele și 
    php artisan db:seed
    ```
 
-### Lucrul cu controlere și vizualizări
+### №6. Lucrul cu controlere și vizualizări
 
 > [!TIP]
 > Tematici: S4, S5, S7, S8
@@ -158,7 +158,5 @@ Veți adăuga funcționalitatea de lucru cu baza de date, veți crea modele și 
 1. Ce sunt migrațiile și la ce se folosesc?
 2. Ce sunt fabricile și seed-urile și cum simplifică procesul de dezvoltare și testare?
 3. Ce este ORM? Care sunt diferențele dintre pattern-urile `DataMapper` și `ActiveRecord`?
-4. Care
-
- sunt avantajele utilizării unui ORM comparativ cu interogările SQL directe?
+4. Care sunt avantajele utilizării unui ORM comparativ cu interogările SQL directe?
 5. Ce sunt tranzacțiile și de ce sunt importante în lucrul cu bazele de date?
