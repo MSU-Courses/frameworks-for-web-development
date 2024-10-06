@@ -63,7 +63,7 @@ graph LR
 
 ```mermaid
 stateDiagram
-    [*] --> Удаление_HTML_тегов : "<script> alert('hello&&&') </script>"
+    [*] --> Удаление_HTML_тегов : &ltscript&gt alert('hello&&&') <&ltscript>
     Удаление_HTML_тегов --> Удаление_спецсимволов : " alert('hello&&&') "
     Удаление_спецсимволов --> Удаление_пробелов : " alert('hello') "
     Удаление_пробелов --> Обработчик : "alert('hello')"
