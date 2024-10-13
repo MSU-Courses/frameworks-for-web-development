@@ -66,7 +66,7 @@ class Post extends Model
 ### UUID в качестве первичного ключа
 
 > [!NOTE]
->  **UUID** (_Universally Unique Identifier_) — это 128-битное число, которое гарантированно уникально во всем мире [^1].
+>  **UUID** (_Universally Unique Identifier_) — это 128-битное число, которое гарантированно уникально во всем мире [^2].
 
 Если вы хотите использовать UUID в качестве первичного ключа используйте трейт `HasUuids`:
 
@@ -361,6 +361,7 @@ Eloquent ORM в Laravel предоставляет мощный и удобны�
 
 Таким образом, Eloquent ORM позволяет легко интегрировать работу с базой данных в логику приложения, обеспечивая при этом высокий уровень безопасности и производительности.
 
-[^1]: The Benefits of Using UUIDs for Unique Identification, tiDB [online]. URL: https://www.pingcap.com/article/the-benefits-of-using-uuids-for-unique-identification/
+[^1]: Eloquent: Getting Started. laravel.com [online]. URL: https://laravel.com/docs/eloquent
 
-[^2]: Eloquent: Getting Started. laravel.com [online]. URL: https://laravel.com/docs/eloquent
+[^2]: The Benefits of Using UUIDs for Unique Identification, tiDB [online]. URL: https://www.pingcap.com/article/the-benefits-of-using-uuids-for-unique-identification/
+
