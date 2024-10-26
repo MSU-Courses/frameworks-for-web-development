@@ -481,7 +481,7 @@ public function roles()
 Eloquent позволяет использовать **построитель запросов** для фильтрации, сортировки и других операций на связанных данных. Чтобы это сделать, вызывайте метод-связь как **метод** (с `()`), добавляя нужные условия:
 
 ```php
-$posts = Category::find(1)->posts()
+$publishedPosts = Category::find(1)->posts()
     ->where('is_published', true)
     ->orderBy('created_at', 'desc')
     ->get();
