@@ -11,7 +11,7 @@ Deprinderea mecanismelor de validare a datelor pe server, utilizarea regulilor d
 În această lucrare de laborator, veți crea formulare HTML, implementați verificarea datelor pe partea de server și asigurați interacțiunea sigură cu utilizatorul, prevenind vulnerabilități precum **XSS** și **CSRF**.
 
 > [!NOTE]
-> În această lucrare de laborator puteți continua munca anterioară sau începe un proiect nou.
+> În această lucrare de laborator puteți continua proiectul din lucrarea de laborator anterioară sau începe un proiect nou.
 
 ### №1. Pregătirea lucrării
 
