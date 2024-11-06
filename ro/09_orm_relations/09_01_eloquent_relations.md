@@ -586,7 +586,7 @@ Astfel, putem gestiona cu ușurință datele asociate între ele.
 
 Când folosim un ORM ca Eloquent, putem încărca datele asociate simplu și direct prin relații. Aceasta ne permite să accesăm nu doar înregistrările principale, ci și datele din tabelele asociate. De exemplu, încărcând categoriile împreună cu postările, putem obține toate postările asociate fiecărei categorii imediat, ceea ce simplifică și accelerează lucrul cu datele.
 
-### Concluzie
+## Concluzie
 
 Relațiile între tabele și modele în Eloquent sunt un instrument puternic pentru lucrul cu datele, evitând interogările excesive și facilitând accesul la datele asociate. Înțelegerea modului în care funcționează relațiile între tabele și modele ajută la utilizarea eficientă a Laravel-ului și face codul mai structurat și mai ușor de înțeles.
 
