@@ -1,6 +1,6 @@
 # Directorul `storage` și `public` în Laravel
 
-## Directorul `storage` și utilizarea sa
+## Directorul `storage`
 
 Folderul `storage` este un element esențial în proiectele Laravel, destinat stocării *temporare* și *permanente* a datelor. Acesta este organizat în mai multe subfoldere, fiecare având un rol specific:
 
@@ -33,7 +33,7 @@ Directorul `storage` este destinat stocării fișierelor care nu ar trebui să f
 
 Acest link simbolic face posibil accesul la fișierele din `storage/app/public` printr-un URL, fără a expune întreg folderul `storage`.
 
-### Crearea unui link simbolic:
+### Crearea unui link simbolic
 
 Pentru a crea link-ul simbolic, folosește comanda:
 
