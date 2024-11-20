@@ -69,7 +69,7 @@ Storage::delete('file.txt');
 
 ### Descărcarea fișierelor
 
-Descărcarea fișierelor constă în transferul fișierului din stocare pe computerul clientului. Pentru aceasta, se utilizează metoda `download`.
+**Descărcarea fișierelor** constă în transferul fișierului din stocare pe computerul clientului. Pentru aceasta, se utilizează metoda `download`.
 
 ```php
 use Illuminate\Support\Facades\Storage;
