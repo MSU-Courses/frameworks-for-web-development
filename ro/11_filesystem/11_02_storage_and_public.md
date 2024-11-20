@@ -24,7 +24,7 @@ Folderul `public` din Laravel reprezintă singura zonă accesibilă utilizatoril
 
 La configurarea serverului web, directorul `public` este indicat ca rădăcina aplicației web.
 
-> [!NOTĂ]  
+> [!NOTE]  
 > Laravel folosește acest model pentru a **crește securitatea**: fișierele și codul aplicației care sunt situate în afara folderului `public` nu sunt accesibile direct prin browser, prevenind astfel accesul neautorizat la date sensibile precum fișierele de configurare sau baza de date.
 
 ## Accesul la fișierele din `storage` prin `public`
