@@ -6,11 +6,7 @@ Acest proiect are scopul de a îmbina cunoștințele teoretice acumulate în tim
 
 Este un proces care ajută studenții nu doar să aprofundeze cunoștințele lor, ci și să se pregătească pentru o carieră viitoare în domeniul dezvoltării software, în care creativitatea, abilitățile și capacitatea de auto-învățare sunt foarte valorizate.
 
-Fiecare lucare individuală va fi analizată atent și discutată cu fiecare student în parte, în scopul de a identifica potențiale neclarități sau greșeli. Acest proces nu doar asigură evaluarea lucării finalizate, ci servește și ca un important pas în schimbul de cunoștințe și experiență între profesor și studenți.
-
 Cu toate că lucrarea este "individuală", aceasta poate fi realizată într-un grup de două persoane **(nu mai mult de două persoane)**.
-
-**Un aspect important este necesitatea discutării fiecărei teme și a muncii viitoare cu profesorul.**
 
 ## Cerință Principală
 
