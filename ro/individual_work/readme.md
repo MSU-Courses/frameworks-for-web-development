@@ -78,4 +78,4 @@ Fișierul **readme** ar trebui să conțină următoarele informații:
 
 Prezentarea lucrării individuale este obligatorie.
 
-În absența unei prezentări a lucrării de laborator, nota maximă va fi de 7, cu condiția îndeplinirii tuturor cerințelor.
+În absența unei prezentări a lucrării de laborator, nota maximă va fi de 6, cu condiția îndeplinirii tuturor cerințelor.
