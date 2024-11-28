@@ -259,6 +259,36 @@ public function update(User $user, Post $post)
 }
 ```
 
+## Restricționarea accesului la resurse
+
+În Laravel, accesul la resurse este controlat prin intermediul **politicilor** și **gateway-urilor**. Totuși, pentru a restricționa accesul utilizatorilor neautorizați la anumite rute, există o metodă mai simplă: utilizarea **middleware-urilor**.
+
+**Middleware-urile** sunt componente software intermediare care procesează cererile înainte sau după ce acestea trec prin aplicație. Acestea permit filtrarea cererilor și aplicarea unor verificări diverse, inclusiv verificarea autentificării.
+
+Pentru a restricționa accesul utilizatorilor neautorizați la o rută, se poate folosi middleware-ul predefinit `auth`.
+
+```php
+Route::get('/dashboard', function () {
+    // Această rută este accesibilă doar utilizatorilor autentificați
+})->middleware('auth');
+```
+
+Middleware-ul `auth`, situat în directorul `app/Http/Middleware` — `Authenticate.php`, verifică automat dacă utilizatorul este autentificat. Dacă utilizatorul nu este autentificat, middleware-ul îl redirecționează către pagina de autentificare.
+
+Pentru a aplica acest middleware unei rute, se folosește metoda `middleware`.
+
+De asemenea, pentru a aplica middleware-ul `auth` unui grup de rute, se poate utiliza metoda `group`:
+
+```php
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        // Această rută este accesibilă doar utilizatorilor autentificați
+    });
+
+    // Alte rute accesibile doar utilizatorilor autentificați
+});
+```
+
 ## Concluzie
 
 Autorizarea este esențială pentru securitatea aplicațiilor web, permițând controlul accesului utilizatorilor la resurse și funcționalități. Laravel oferă un sistem puternic de autorizare bazat pe **Politici** și **Porți**, care permite crearea unor reguli flexibile și sigure. Înțelegerea și utilizarea corectă a acestora contribuie la dezvoltarea unor aplicații web robuste.
