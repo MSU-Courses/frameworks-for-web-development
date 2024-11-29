@@ -51,7 +51,7 @@ class CurrencyConverter
 }
 ```
 
-### Шаг 2: Регистрация сервиса в `Service Container`
+## Шаг 2: Регистрация сервиса в `Service Container`
 
 Зарегистрируйте сервис в методе `register` класса `AppServiceProvider`.
 
