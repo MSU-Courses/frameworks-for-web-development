@@ -1,4 +1,4 @@
-## Utilizarea serviciilor ca helper, fațadă și prin Dependency Injection
+# Utilizarea serviciilor ca helper, fațadă și prin Dependency Injection
 
 Laravel oferă mai multe modalități flexibile de a lucra cu servicii:  
 - utilizând **helperi**,  
@@ -9,11 +9,11 @@ Fiecare abordare are propriile caracteristici și este folosită în funcție de
 
 De exemplu, serviciul integrat de autentificare din Laravel (`Auth`) poate fi accesat prin helperul `auth()`, fațada `Auth` sau injectat ca dependență. Aceste metode pot fi aplicate și propriilor servicii.
 
-### Serviciul ca helper
+## Serviciul ca helper
 
 **Helperii** sunt funcții globale care oferă acces rapid la diverse funcționalități. Laravel are mai mulți helperi încorporați, cum ar fi `auth()`, `route()`, `config()` și alții. Helperii sunt utili pentru apeluri rapide și concise.
 
-#### Exemplu: `auth()` ca helper
+### Exemplu: `auth()` ca helper
 
 Helperul `auth()` permite obținerea utilizatorului curent:
 
@@ -23,7 +23,7 @@ $user = auth()->user();
 
 Acest helper apelează intern serviciul de autentificare `AuthManager`, care este înregistrat în containerul de servicii.
 
-#### Cum să creezi un helper personalizat?
+### Cum să creezi un helper personalizat?
 
 Poți crea un helper pentru a apela metodele propriului serviciu. De exemplu, pentru `CurrencyConverter`:
 
@@ -64,13 +64,11 @@ Acum poți folosi helperul `convert_currency()`:
 $converted = convert_currency(100, 'USD', 'EUR');
 ```
 
-
-
-### Serviciul ca fațadă
+## Serviciul ca fațadă
 
 **Fațadele** oferă o interfață statică pentru accesarea serviciilor prin containerul de servicii. Ele simplifică apelarea metodelor, păstrând codul curat și compact. Laravel folosește fațade pentru componente precum `Auth`, `Cache`, `DB` și altele.
 
-#### Exemplu: `Auth` ca fațadă
+### Exemplu: `Auth` ca fațadă
 
 Fațada `Auth` permite gestionarea autentificării:
 
@@ -80,7 +78,7 @@ $user = Auth::user();
 
 Intern, fațada apelează același serviciu `AuthManager` pe care îl folosește și helperul `auth()`.
 
-#### Cum să creezi o fațadă pentru un serviciu personalizat?
+### Cum să creezi o fațadă pentru un serviciu personalizat?
 
 1. Creează fișierul pentru fațadă:
 
@@ -116,13 +114,11 @@ $converted = Currency::convert(100, 'USD', 'EUR');
 
 Fațadele sunt utile pentru servicii utilizate frecvent, dar pot complica testarea, deoarece nu permit ușor înlocuirea dependențelor cu mock-uri.
 
-
-
-### Serviciul prin Dependency Injection
+## Serviciul prin Dependency Injection
 
 **Dependency Injection (DI)** este metoda principală de a lucra cu servicii în Laravel, mai ales cu cele proprii. Injectarea dependențelor face codul mai ușor de testat și modular. DI permite specificarea explicită a dependențelor clasei prin constructor sau metode.
 
-#### Exemplu: Utilizarea `CurrencyConverter` prin DI
+### Exemplu: Utilizarea `CurrencyConverter` prin DI
 
 1. Injectează serviciul în controller prin constructor:
 
@@ -149,9 +145,7 @@ class CurrencyController extends Controller
 
 2. Serviciul este acum gestionat de container, ceea ce simplifică testarea și întreținerea.
 
-
-
-### Concluzie
+## Concluzie
 
 Alegerea între helper, fațadă și Dependency Injection depinde de context:
 

@@ -1,14 +1,14 @@
-## Практическая часть: Сервис для преобразования валют
+# Практическая часть: Сервис для преобразования валют
 
 В этой части мы создадим сервис — **CurrencyConverter**, который будет использоваться для преобразования валют.
 
 Контроллер будет выполнять минимальную роль: обрабатывать запросы и делегировать логику сервису.
 
-### Шаг 1: Создание сервиса
+## Шаг 1: Создание сервиса
 
 Создайте директорию `app/Services`, если её ещё нет. В этой директории создайте файл `CurrencyConverter.php`.
 
-#### Код: `app/Services/CurrencyConverter.php`
+### Код: `app/Services/CurrencyConverter.php`
 
 ```php
 <?php
@@ -55,7 +55,7 @@ class CurrencyConverter
 
 Зарегистрируйте сервис в методе `register` класса `AppServiceProvider`.
 
-#### Код: `app/Providers/AppServiceProvider.php`
+### Код: `app/Providers/AppServiceProvider.php`
 
 ```php
 <?php
@@ -84,11 +84,11 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-### Шаг 3: Использование сервиса в контроллере
+## Шаг 3: Использование сервиса в контроллере
 
 Создайте контроллер, который будет использовать `CurrencyConverter`.
 
-#### Создание контроллера
+### Создание контроллера
 
 Создайте контроллер командой Artisan:
 
@@ -96,7 +96,7 @@ class AppServiceProvider extends ServiceProvider
 php artisan make:controller CurrencyController
 ```
 
-#### Код: `app/Http/Controllers/CurrencyController.php`
+### Код: `app/Http/Controllers/CurrencyController.php`
 
 ```php
 <?php
@@ -143,11 +143,11 @@ class CurrencyController extends Controller
 }
 ```
 
-### Шаг 4: Настройка маршрута
+## Шаг 4: Настройка маршрута
 
 Добавьте маршрут для метода `convert` контроллера.
 
-#### Код: `routes/web.php`
+### Код: `routes/web.php`
 
 ```php
 use App\Http\Controllers\CurrencyController;

@@ -1,4 +1,4 @@
-## Partea practică: Serviciu pentru conversia valutelor
+# Partea practică: Serviciu pentru conversia valutelor
 
 În această parte, vom crea un serviciu — **CurrencyConverter**, care va fi utilizat pentru conversia valutelor. 
 
@@ -6,11 +6,11 @@ Controller-ul va avea un rol minim: gestionarea cererilor și delegarea logicii 
 
 ---
 
-### Pasul 1: Crearea serviciului
+## Pasul 1: Crearea serviciului
 
 Creează un director `app/Services` dacă acesta nu există deja. În acest director, creează fișierul `CurrencyConverter.php`.
 
-#### Cod: `app/Services/CurrencyConverter.php`
+### Cod: `app/Services/CurrencyConverter.php`
 
 ```php
 <?php
@@ -53,13 +53,12 @@ class CurrencyConverter
 }
 ```
 
----
 
-### Pasul 2: Înregistrarea serviciului în `Service Container`
+## Pasul 2: Înregistrarea serviciului în `Service Container`
 
 Înregistrează serviciul în metoda `register` a clasei `AppServiceProvider`.
 
-#### Cod: `app/Providers/AppServiceProvider.php`
+### Cod: `app/Providers/AppServiceProvider.php`
 
 ```php
 <?php
@@ -88,13 +87,11 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
----
-
-### Pasul 3: Utilizarea serviciului în controller
+## Pasul 3: Utilizarea serviciului în controller
 
 Creează un controller care va utiliza `CurrencyConverter`.
 
-#### Crearea controller-ului
+### Crearea controller-ului
 
 Creează un controller folosind comanda Artisan:
 
@@ -102,7 +99,7 @@ Creează un controller folosind comanda Artisan:
 php artisan make:controller CurrencyController
 ```
 
-#### Cod: `app/Http/Controllers/CurrencyController.php`
+### Cod: `app/Http/Controllers/CurrencyController.php`
 
 ```php
 <?php
@@ -149,13 +146,11 @@ class CurrencyController extends Controller
 }
 ```
 
----
-
-### Pasul 4: Configurarea rutei
+## Pasul 4: Configurarea rutei
 
 Adaugă o rută pentru metoda `convert` din controller.
 
-#### Cod: `routes/web.php`
+### Cod: `routes/web.php`
 
 ```php
 use App\Http\Controllers\CurrencyController;

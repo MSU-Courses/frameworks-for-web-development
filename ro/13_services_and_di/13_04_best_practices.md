@@ -1,4 +1,4 @@
-## Cele mai bune practici în Laravel
+# Cele mai bune practici în Laravel
 
 Atunci când proiectezi o aplicație, este important să urmezi cele mai bune practici pentru a menține arhitectura curată, ușor de înțeles și ușor de întreținut.
 
@@ -8,7 +8,7 @@ Mai jos sunt principalele recomandări privind utilizarea serviciilor și separa
 
 
 
-### Când să folosești serviciile?
+## Când să folosești serviciile?
 
 **Serviciile** sunt clase care incapsulează logica de business, făcând-o accesibilă altor părți ale aplicației. Utilizarea serviciilor este recomandată în următoarele situații:
 
@@ -26,7 +26,7 @@ Mai jos sunt principalele recomandări privind utilizarea serviciilor și separa
 
 
 
-### Cum să eviți complicarea arhitecturii?
+## Cum să eviți complicarea arhitecturii?
 
 Este important să eviți o arhitectură excesiv de complicată, care poate îngreuna întreținerea aplicației și reduce eficiența echipei. Iată câteva sfaturi:
 
@@ -44,11 +44,11 @@ Este important să eviți o arhitectură excesiv de complicată, care poate îng
 
 
 
-### Separarea responsabilităților (Single Responsibility Principle)
+## Separarea responsabilităților (Single Responsibility Principle)
 
 **Principiul responsabilității unice (SRP)** spune că o clasă ar trebui să îndeplinească o singură sarcină. Respectarea acestui principiu face codul mai ușor de testat, înțeles și întreținut.
 
-#### Exemplu de încălcare a SRP:
+### Exemplu de încălcare a SRP:
 
 ```php
 class AuthController extends Controller
@@ -78,7 +78,7 @@ Acest lucru face codul dificil de testat și încalcă principiul SRP.
 
 
 
-### Exemplu: Separarea logicii de autentificare într-un serviciu
+## Exemplu: Separarea logicii de autentificare într-un serviciu
 
 Logica de autentificare poate fi mutată într-un serviciu separat:
 
@@ -124,7 +124,7 @@ class AuthController extends Controller
 
 
 
-### Avantajele abordării
+## Avantajele abordării
 
 1. **Testare mai ușoară**  
    Acum poți testa `AuthService` independent de solicitările HTTP, garantând fiabilitatea logicii.
@@ -140,7 +140,7 @@ class AuthController extends Controller
 
 
 
-### Rezumat
+## Rezumat
 
 1. Folosește serviciile pentru logica complexă, reutilizabilă sau independentă.
 2. Respectă principiul SRP — separă responsabilitățile între clase.
