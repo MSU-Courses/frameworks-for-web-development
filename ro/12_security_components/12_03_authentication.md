@@ -232,8 +232,6 @@ public function logout(Request $request)
 }
 ```
 
----
-
 ## Sesiuni și autentificare
 
 În capitolul anterior, am discutat procesul de autentificare a utilizatorului în Laravel, care implică adesea utilizarea sesiunilor pentru a stoca date despre utilizator și starea acestuia. Pentru a înțelege mai bine mecanismul, să explorăm modul în care Laravel gestionează sesiunile.
@@ -306,8 +304,6 @@ Blocul de cod din interiorul directivei `@auth` va fi afișat numai utilizatoril
 ```
 
 Aceste directive oferă o modalitate simplă și eficientă de a gestiona conținutul în funcție de starea de autentificare a utilizatorului.
-
----
 
 ## Concluzie
 

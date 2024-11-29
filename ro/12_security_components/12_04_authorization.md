@@ -1,4 +1,4 @@
-# Autorizarea
+# Autorizarea în Laravel
 
 > [!NOTE]  
 > **Autorizarea în aplicațiile web** reprezintă procesul de determinare a drepturilor și privilegiilor unui utilizator atunci când accesează diverse resurse și funcționalități ale sistemului. După autentificare, care stabilește identitatea utilizatorului, urmează autorizarea, care definește acțiunile pe care utilizatorul le poate efectua. Autorizarea răspunde la întrebarea: „_Ce poate face utilizatorul?_”.
