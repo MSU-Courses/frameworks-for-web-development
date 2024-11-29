@@ -9,8 +9,6 @@ Fiecare abordare are propriile caracteristici și este folosită în funcție de
 
 De exemplu, serviciul integrat de autentificare din Laravel (`Auth`) poate fi accesat prin helperul `auth()`, fațada `Auth` sau injectat ca dependență. Aceste metode pot fi aplicate și propriilor servicii.
 
----
-
 ### Serviciul ca helper
 
 **Helperii** sunt funcții globale care oferă acces rapid la diverse funcționalități. Laravel are mai mulți helperi încorporați, cum ar fi `auth()`, `route()`, `config()` și alții. Helperii sunt utili pentru apeluri rapide și concise.
@@ -66,7 +64,7 @@ Acum poți folosi helperul `convert_currency()`:
 $converted = convert_currency(100, 'USD', 'EUR');
 ```
 
----
+
 
 ### Serviciul ca fațadă
 
@@ -118,7 +116,7 @@ $converted = Currency::convert(100, 'USD', 'EUR');
 
 Fațadele sunt utile pentru servicii utilizate frecvent, dar pot complica testarea, deoarece nu permit ușor înlocuirea dependențelor cu mock-uri.
 
----
+
 
 ### Serviciul prin Dependency Injection
 
@@ -151,7 +149,7 @@ class CurrencyController extends Controller
 
 2. Serviciul este acum gestionat de container, ceea ce simplifică testarea și întreținerea.
 
----
+
 
 ### Concluzie
 
