@@ -15,7 +15,7 @@ Containerele de servicii sunt adesea utilizate pentru a implementa **inversiunea
 
 Containerul de servicii poate fi imaginat ca o "cutie" în care sunt stocate toate serviciile și celelalte obiecte ale aplicației. Când un obiect are nevoie de acces la un anumit serviciu, îl solicită de la container. Containerul creează și furnizează obiectul necesar, astfel încât dezvoltatorul doar îl utilizează, fără a-și face griji cu privire la detaliile legate de crearea și gestionarea acestuia.
 
-> [!NOTĂ]
+> [!NOTE]
 > În Laravel, de exemplu, containerul de servicii joacă un rol-cheie în gestionarea dependențelor și furnizarea serviciilor aplicației.
 
 ## Containerul de servicii în Laravel
