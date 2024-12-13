@@ -1,0 +1,8 @@
+---
+- name: Add a new student
+  hosts: usm_web_server
+  become: true
+  roles:
+    - role: student
+      vars:
+        student_name: "nichita.nartea"

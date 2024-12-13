@@ -1,0 +1,3 @@
+server_domain: "stud-learn.usm.md"
+php_fpm_socket: "unix:/run/php/php-fpm.sock"
+nginx_students_config_dir: "/etc/nginx/student.d"

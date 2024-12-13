@@ -1,0 +1,19 @@
+location /{{ student_name }} {
+        alias /home/{{ student_name }}/website/public;
+
+        index index.php index.html;
+
+        try_files $uri $uri/ /index.php?$query_string;
+
+        location ~ \.php$ {
+            include fastcgi_params;
+            fastcgi_pass unix:/run/php/php8.2-fpm.sock; #                         PHP,
+            fastcgi_param SCRIPT_FILENAME $request_filename;
+            fastcgi_param PATH_INFO $fastcgi_path_info;
+            fastcgi_index index.php;
+        }
+
+        location ~ /\.ht {
+            deny all;
+        }
+    }

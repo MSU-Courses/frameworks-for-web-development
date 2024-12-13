@@ -1,0 +1,46 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor backups and temporary files
+*.swp
+*.swo
+*.bak
+*~
+.idea/
+.vscode/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Ansible retry files (created when a play fails)
+*.retry
+
+# Logs and outputs
+*.log
+*.out
+
+# Sensitive or secret files (adjust as needed)
+vault_pass.txt
+secret_*
+private_key_*
+id_rsa
+id_rsa.pub
+*_id_ed25519
+inventory.ini
+
+# If you have local inventory files that shouldn’t be tracked
+# Uncomment if desired:
+# inventory.ini
+# group_vars/
+# host_vars/
+
+# Ignore temporary directories or backup files within roles
+roles/*/files/tmp/
+roles/*/templates/tmp/
+
+# Additional temporary or generated files
+*.retry
+*.orig
+*.old

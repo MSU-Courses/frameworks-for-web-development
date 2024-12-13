@@ -1,0 +1,85 @@
+---
+- name: Create student user
+  user:
+    name: "{{ student_name }}"
+    create_home: yes
+    shell: /bin/bash
+    state: present
+
+- name: Create website directories
+  file:
+    path: "/home/{{ student_name }}/website/public"
+    state: directory
+    owner: "{{ student_name }}"
+    group: "{{ student_name }}"
+    mode: '0755'
+
+- name: Ensure SSH directory exists
+  file:
+    path: "/home/{{ student_name }}/.ssh"
+    state: directory
+    owner: "{{ student_name }}"
+    group: "{{ student_name }}"
+    mode: '0700'
+
+- name: Generate SSH key pair for the student
+  command: ssh-keygen -t ed25519 -f /home/{{ student_name }}/.ssh/id_ed25519 -N ""
+  args:
+    creates: /home/{{ student_name }}/.ssh/id_ed25519
+
+- name: Set permissions for the SSH directory
+  file:
+    path: "/home/{{ student_name }}/.ssh"
+    state: directory
+    owner: "{{ student_name }}"
+    group: "{{ student_name }}"
+    mode: '0700'
+
+- name: Add the public key to authorized_keys
+  copy:
+    src: "/home/{{ student_name }}/.ssh/id_ed25519.pub"
+    dest: "/home/{{ student_name }}/.ssh/authorized_keys"
+    remote_src: yes
+    owner: "{{ student_name }}"
+    group: "{{ student_name }}"
+    mode: '0644'
+
+- name: Set permissions for the private key
+  file:
+    path: "/home/{{ student_name }}/.ssh/id_ed25519"
+    owner: "{{ student_name }}"
+    group: "{{ student_name }}"
+    mode: '0600'
+
+- name: Fetch the private key for CI/CD
+  fetch:
+    src: "/home/{{ student_name }}/.ssh/id_ed25519"
+    dest: "files/{{ student_name }}_id_ed25519"
+    flat: yes
+
+- name: Ensure students config directory exists
+  file:
+    path: "{{ nginx_students_config_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Deploy nginx config for student
+  template:
+    src: "student_nginx.conf.j2"
+    dest: "{{ nginx_students_config_dir }}/{{ student_name }}.conf"
+    mode: '0644'
+
+- name: Test nginx config
+  command: nginx -t
+  register: nginx_test
+  ignore_errors: yes
+
+- name: Fail if nginx config test fails
+  fail:
+    msg: "nginx config test failed."
+  when: nginx_test.rc != 0
+
+- name: Reload nginx
+  service:
+    name: nginx
+    state: reloaded
